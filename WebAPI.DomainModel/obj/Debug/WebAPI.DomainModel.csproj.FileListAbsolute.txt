@@ -1,0 +1,6 @@
+D:\SampleProject\WebAPI\WebAPI.DomainModel\bin\Debug\WebAPI.DomainModel.dll
+D:\SampleProject\WebAPI\WebAPI.DomainModel\bin\Debug\WebAPI.DomainModel.pdb
+D:\SampleProject\WebAPI\WebAPI.DomainModel\bin\Debug\Microsoft.Web.Mvc.dll
+D:\SampleProject\WebAPI\WebAPI.DomainModel\obj\Debug\WebAPI.DomainModel.dll
+D:\SampleProject\WebAPI\WebAPI.DomainModel\obj\Debug\WebAPI.DomainModel.pdb
+D:\SampleProject\WebAPI\WebAPI.DomainModel\obj\Debug\WebAPI.DomainModel.csprojResolveAssemblyReference.cache
