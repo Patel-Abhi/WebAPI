@@ -10,7 +10,7 @@ namespace WebAPI.Repositories.RepositoryInterface
    public interface IUserRepository
     {
         int CreateUser(string username, string password);
-        int GetLoginData(string username, string password);
+        LoginModel GetLoginData(string username, string password);
         List<LoginModel> GetAllUsers();
         LoginModel GetUserById(int userId);
         LoginModel GetByUsername(string username);

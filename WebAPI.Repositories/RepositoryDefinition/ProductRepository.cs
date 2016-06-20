@@ -21,9 +21,9 @@ namespace WebAPI.Repositories.RepositoryDefinition
 
 
 
-        public void AddNewProduct(ProductModel product)
+        public int AddNewProduct(ProductModel product)
         {
-            throw new NotImplementedException();
+            return 0;
         }
 
 

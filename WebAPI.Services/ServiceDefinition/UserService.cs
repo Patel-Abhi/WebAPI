@@ -41,9 +41,9 @@ namespace WebAPI.Services.ServiceDefinition
         #endregion
 
         #region Get Login Data
-        public ServiceResponse<int> GetLoginData(string username, string password)
+        public ServiceResponse<LoginModel> GetLoginData(string username, string password)
         {
-            ServiceResponse<int> response = new ServiceResponse<int>();
+            ServiceResponse<LoginModel> response = new ServiceResponse<LoginModel>();
             response.Status = Status.Failure;
             try
             {
@@ -77,14 +77,36 @@ namespace WebAPI.Services.ServiceDefinition
         public ServiceResponse<LoginModel> GetUserById(int userId)
         {
             ServiceResponse<LoginModel> response = new ServiceResponse<LoginModel>();
+            response.Status = Status.Failure;
+            try
+            {
+                response.Data = _userRepository.GetUserById(userId);
+                response.Status = Status.Success;
+            }
+            catch (Exception ex)
+            {
+                response.Exception = ex;
+                response.ErrorMessage = "Error occured while getting user data";
+            }
             return response;
         }
         #endregion
 
         #region Get By Username
-        public ServiceResponse<LoginModel> GetByUsername(int username)
+        public ServiceResponse<LoginModel> GetByUsername(string username)
         {
             ServiceResponse<LoginModel> response = new ServiceResponse<LoginModel>();
+            response.Status = Status.Failure;
+            try
+            {
+                response.Data = _userRepository.GetByUsername(username);
+                response.Status = Status.Success;
+            }
+            catch(Exception ex)
+            {
+                response.Exception = ex;
+                response.ErrorMessage = "Error occured while getting user data";
+            }
             return response;
         }
         #endregion   

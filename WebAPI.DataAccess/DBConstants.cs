@@ -15,7 +15,6 @@ namespace WebAPI.DataAccess
                return "SP_CreateUser";
            }
        }
-
        public static string GetLoginData
        {
            get
@@ -28,6 +27,20 @@ namespace WebAPI.DataAccess
            get
            {
                return "SP_GetAllUsers";
+           }
+       }
+       public static string GetUserById
+       {
+           get
+           {
+               return "SP_GetUserById";
+           }
+       }
+       public static string GetByUsername
+       {
+           get
+           {
+               return "SP_GetByUsername";
            }
        }
     }

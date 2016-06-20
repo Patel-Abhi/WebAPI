@@ -46,7 +46,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ServiceDefinition\ProductService.cs" />
     <Compile Include="ServiceDefinition\UserService.cs" />
+    <Compile Include="ServiceInterface\IProductService.cs" />
     <Compile Include="ServiceInterface\IUserService.cs" />
   </ItemGroup>
   <ItemGroup />

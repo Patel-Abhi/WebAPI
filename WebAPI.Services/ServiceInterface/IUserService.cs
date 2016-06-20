@@ -10,9 +10,9 @@ namespace WebAPI.Services.ServiceInterface
    public interface IUserService
     {
         ServiceResponse<int> CreateUser(string username, string password);
-        ServiceResponse<int> GetLoginData(string username, string password);
+        ServiceResponse<LoginModel> GetLoginData(string username, string password);
         List<LoginModel> GetAllUsers();
         ServiceResponse<LoginModel> GetUserById(int userId);
-        ServiceResponse<LoginModel> GetByUsername(int username);
+        ServiceResponse<LoginModel> GetByUsername(string username);
     }
 }

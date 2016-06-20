@@ -9,7 +9,7 @@ namespace WebAPI.Repositories.RepositoryInterface
 {
    public interface IProductRepository
     {
-       void AddNewProduct(ProductModel product);
+       int AddNewProduct(ProductModel product);
        List<ProductModel> GetAllProducts();
     }
 }

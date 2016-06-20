@@ -31,7 +31,7 @@ namespace WebAPI.Repositories.RepositoryDefinition
             outputVal.Direction = ParameterDirection.Output;
             cmd.Parameters.Add(outputVal);
             cmd.Parameters.AddWithValue("@Username", username);
-            cmd.Parameters.AddWithValue("@Password", password);
+            cmd.Parameters.AddWithValue("@Password", Utility.Encrypt(password));
             try
             {
                 con.Open();
@@ -51,24 +51,37 @@ namespace WebAPI.Repositories.RepositoryDefinition
         #endregion
 
         #region Get Login Data
-        public int GetLoginData(string username, string password)
+        public LoginModel GetLoginData(string username, string password)
         {
-            int userId = 0;
-            cmd = new SqlCommand(DBConstants.CreateUser, con);
+            string encPassword = Utility.Encrypt(password);
+            LoginModel user = new LoginModel();
+            cmd = new SqlCommand(DBConstants.GetLoginData, con);
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.AddWithValue("@Username", username);
-            cmd.Parameters.AddWithValue("@Password", password);
+            cmd.Parameters.AddWithValue("@Password", encPassword);
             try
             {
                 con.Open();
-                cmd.ExecuteNonQuery();
+                SqlDataReader rdr = cmd.ExecuteReader();
+
+                while (rdr.Read())
+                {
+                    user.UserId = rdr.GetInt32(0);
+                    user.Username = rdr.GetString(1);
+                    user.Password = rdr.GetString(2);
+                    user.SignUpDt = rdr.GetDateTime(3).ToShortDateString();
+                    user.LastLoginDt = rdr.GetDateTime(4).ToShortDateString();
+                    user.UpdateDt = rdr.GetDateTime(5).ToShortDateString();
+                }
+                rdr.Close();
             }
             catch (Exception ex) { }
             finally
             {
                 con.Close();
+
             }
-            return userId;
+            return user;
         }
         #endregion
 
@@ -108,22 +121,75 @@ namespace WebAPI.Repositories.RepositoryDefinition
             return lstUsers;
         }
         #endregion
-        
+
         #region Get User By Id
         public LoginModel GetUserById(int userId)
         {
             LoginModel user = new LoginModel();
+            cmd = new SqlCommand(DBConstants.GetUserById, con);
+            cmd.Parameters.AddWithValue("@UserId", userId);
+            cmd.CommandType = CommandType.StoredProcedure;
+            try
+            {
+                con.Open();
+                SqlDataReader rdr = cmd.ExecuteReader();
+
+                while (rdr.Read())
+                {
+                    user.UserId = rdr.GetInt32(0);
+                    user.Username = rdr.GetString(1);
+                    user.Password = rdr.GetString(2);
+                    user.SignUpDt = rdr.GetDateTime(3).ToShortDateString();
+                    user.LastLoginDt = rdr.GetDateTime(4).ToShortDateString();
+                    user.UpdateDt = rdr.GetDateTime(5).ToShortDateString();
+                }
+                rdr.Close();
+            }
+            catch (Exception ex) { }
+            finally
+            {
+                con.Close();
+
+            }
+
             return user;
         }
         #endregion
 
         #region Get User By Username
 
-       public LoginModel GetByUsername(string username)
+        public LoginModel GetByUsername(string username)
         {
             LoginModel user = new LoginModel();
+            cmd = new SqlCommand(DBConstants.GetByUsername, con);
+            cmd.Parameters.AddWithValue("@Username", username);
+            cmd.CommandType = CommandType.StoredProcedure;
+            try
+            {
+                con.Open();
+                SqlDataReader rdr = cmd.ExecuteReader();
+
+                while (rdr.Read())
+                {
+                    user.UserId = rdr.GetInt32(0);
+                    user.Username = rdr.GetString(1);
+                    user.Password = rdr.GetString(2);
+                    user.SignUpDt = rdr.GetDateTime(3).ToShortDateString();
+                    user.LastLoginDt = rdr.GetDateTime(4).ToShortDateString();
+                    user.UpdateDt = rdr.GetDateTime(5).ToShortDateString();
+                }
+                rdr.Close();
+            }
+            catch (Exception ex) { }
+            finally
+            {
+                con.Close();
+
+            }
+
             return user;
         }
         #endregion
+
     }
 }
