@@ -10,7 +10,7 @@ using WebAPI.Services.ServiceInterface;
 
 namespace WebAPI.Controllers
 {
-    [RoutePrefix("api/employee")]
+    [RoutePrefix("api/employees")]
     public class EmployeeController : ApiController
     {
 
@@ -33,7 +33,6 @@ namespace WebAPI.Controllers
             else
             {
                 var resp = _service.GetAllUsers();
-
             }
             return response;
         }
@@ -43,6 +42,21 @@ namespace WebAPI.Controllers
         {
             var response = _service.CreateUser(username, password);
             return response.Data;
+        }
+
+        [HttpGet]
+        [Route("FindOne")]
+        public ServiceResponse<LoginModel> FindOne(string username)
+        {
+            var response = _service.GetByUsername(username);
+            return response;
+        }
+
+        [HttpGet]
+        [Route("count")]
+        public int FindOne()
+        {
+            return 2;
         }
 
 
