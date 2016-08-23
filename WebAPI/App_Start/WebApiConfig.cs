@@ -21,7 +21,7 @@ namespace WebAPI
                 defaults: new { id = RouteParameter.Optional }
             );
             config.Formatters.Remove(config.Formatters.XmlFormatter);
-            var cors = new EnableCorsAttribute("www.example.com", "*", "*");
+            var cors = new EnableCorsAttribute("*", "*", "*");
             config.EnableCors(cors);
         }
     }

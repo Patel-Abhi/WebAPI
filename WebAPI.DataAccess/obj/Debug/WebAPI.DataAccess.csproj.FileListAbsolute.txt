@@ -1,5 +1,5 @@
 D:\SampleProject\WebAPI\WebAPI.DataAccess\bin\Debug\WebAPI.DataAccess.dll
 D:\SampleProject\WebAPI\WebAPI.DataAccess\bin\Debug\WebAPI.DataAccess.pdb
+D:\SampleProject\WebAPI\WebAPI.DataAccess\obj\Debug\WebAPI.DataAccess.csprojResolveAssemblyReference.cache
 D:\SampleProject\WebAPI\WebAPI.DataAccess\obj\Debug\WebAPI.DataAccess.dll
 D:\SampleProject\WebAPI\WebAPI.DataAccess\obj\Debug\WebAPI.DataAccess.pdb
-D:\SampleProject\WebAPI\WebAPI.DataAccess\obj\Debug\WebAPI.DataAccess.csprojResolveAssemblyReference.cache
