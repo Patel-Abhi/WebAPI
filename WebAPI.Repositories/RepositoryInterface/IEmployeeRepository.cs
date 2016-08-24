@@ -7,7 +7,7 @@ using WebAPI.DomainModel;
 
 namespace WebAPI.Repositories.RepositoryInterface
 {
-   public interface IUserRepository
+   public interface IEmployeeRepository
     {
         int CreateUser(string username, string password);
         LoginModel GetLoginData(string username, string password);

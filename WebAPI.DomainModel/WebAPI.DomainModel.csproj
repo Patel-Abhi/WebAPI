@@ -43,6 +43,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ApplyForInterviewModel.cs" />
+    <Compile Include="CandidateModel.cs" />
+    <Compile Include="EnquiryModel.cs" />
     <Compile Include="LoginModel.cs" />
     <Compile Include="ProductModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

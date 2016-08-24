@@ -14,8 +14,8 @@ namespace WebAPI.Controllers
     public class EmployeeController : ApiController
     {
 
-        IUserService _service;
-        public EmployeeController(IUserService service)
+        IEmployeeService _service;
+        public EmployeeController(IEmployeeService service)
         {
             _service = service;
         }

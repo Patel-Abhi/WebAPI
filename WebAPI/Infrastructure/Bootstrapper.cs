@@ -27,7 +27,7 @@ namespace WebAPI.Infrastructure
         private static IUnityContainer BuildUnityContainer()
         {
             var container = new UnityContainer();
-            container.RegisterType<IUserService, UserService>();
+            container.RegisterType<IEmployeeService, EmployeeService>();
             //container.RegisterType<IProductService, ProductService>();
             return container;
         }

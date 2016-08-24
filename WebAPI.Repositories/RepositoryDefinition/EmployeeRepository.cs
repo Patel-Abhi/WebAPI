@@ -11,7 +11,7 @@ using WebAPI.Repositories.RepositoryInterface;
 
 namespace WebAPI.Repositories.RepositoryDefinition
 {
-    public class UserRepository : IUserRepository
+    public class EmployeeRepository : IEmployeeRepository
     {
 
         #region Global Objects Decalaration

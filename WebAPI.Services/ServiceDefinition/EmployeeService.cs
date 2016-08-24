@@ -9,11 +9,11 @@ using WebAPI.Services.ServiceInterface;
 
 namespace WebAPI.Services.ServiceDefinition
 {
-    public class UserService : IUserService
+    public class EmployeeService : IEmployeeService
     {
         #region Property Initialization
-        public UserRepository _userRepository { get; set; }
-        public UserService(UserRepository userRepository)
+        public EmployeeRepository _userRepository { get; set; }
+        public EmployeeService(EmployeeRepository userRepository)
         {
             _userRepository = userRepository;
         }

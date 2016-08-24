@@ -7,7 +7,7 @@ using WebAPI.DomainModel;
 
 namespace WebAPI.Services.ServiceInterface
 {
-   public interface IUserService
+   public interface IEmployeeService
     {
         ServiceResponse<int> CreateUser(string username, string password);
         ServiceResponse<LoginModel> GetLoginData(string username, string password);
