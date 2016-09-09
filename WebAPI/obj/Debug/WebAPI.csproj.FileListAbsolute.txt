@@ -52,4 +52,3 @@ D:\SampleProject\WebAPI\WebAPI\obj\Debug\WebAPI.csprojResolveAssemblyReference.c
 D:\SampleProject\WebAPI\WebAPI\obj\Debug\WebAPI.dll
 D:\SampleProject\WebAPI\WebAPI\obj\Debug\WebAPI.pdb
 D:\SampleProject\WebAPI\WebAPI\bin\WebAPI.XML
-D:\SampleProject\WebAPI\WebAPI\bin\Swashbuckle.Core.dll

@@ -12,7 +12,7 @@ namespace WebAPI.DomainModel
         public List<InterviewAttempt> InterviewHistory { get; set; }
     }
 
-    private class InterviewAttempt
+    public class InterviewAttempt
     {
         public DateTime InterviewDate { get; set; }
         public string InterviewComments { get; set; }
